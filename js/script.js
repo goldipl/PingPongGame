@@ -8,3 +8,13 @@ function drawPaddle(x, y) {
 
 drawPaddle(860, 100);
 drawPaddle(10, 300);
+
+function drawBall(x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fillStyle = "#000000";
+    ctx.fill();
+}
+
+drawBall(400, 250, 10);
