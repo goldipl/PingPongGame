@@ -21,4 +21,4 @@ Project was created with:
 https://goldipl.github.io/PingPongGame/
 
 ## Source
-@MarcinMoskala
+Source code © @MarcinMoskala from book "Javascript od podstaw"
