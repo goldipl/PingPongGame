@@ -1,3 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 40px;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
 #pingPongCanvas {
     width: 900px;
     height: 550px;
