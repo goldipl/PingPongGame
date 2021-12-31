@@ -8,6 +8,10 @@
 body {
     font-family: 'Titillium Web', sans-serif;
     margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
