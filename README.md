@@ -15,6 +15,7 @@ Project was created with:
 * JavaScript
 
 ## Screen
+![Screenshot](pingpong.png) 
 
 ## Live :star2:
 https://goldipl.github.io/PingPongGame/
