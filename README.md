@@ -17,6 +17,7 @@ Project was created with:
 ## Screen
 
 ## Live :star2:
+https://goldipl.github.io/PingPongGame/
 
 ## Source
 @MarcinMoskala
