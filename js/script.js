@@ -1,7 +1,7 @@
 const pingPongCanvas = document.getElementById("pingPongCanvas");
 const ctx = pingPongCanvas.getContext("2d");
 
-function drawPaddle(x, y) {
+drawPaddle = (x, y) => {
     ctx.fillStyle = "#FF0000";
     ctx.fillRect(x, y, 30, 100);
 }
@@ -9,7 +9,7 @@ function drawPaddle(x, y) {
 drawPaddle(860, 100);
 drawPaddle(10, 300);
 
-function drawBall(x, y, r) {
+drawBall = (x, y, r) => {
     ctx.beginPath();
     ctx.arc(x, y, r, 0, Math.PI * 2, true);
     ctx.closePath();
