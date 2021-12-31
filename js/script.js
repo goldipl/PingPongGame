@@ -18,3 +18,7 @@ drawBall = (x, y, r) => {
 }
 
 drawBall(400, 250, 10);
+
+clearCanvas = () => {
+    ctx.clearRect(0, 0, pingPongCanvas.width, pingPongCanvas.height);
+}
