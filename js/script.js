@@ -74,16 +74,30 @@ drawPoints = () => {
 const paddle_Y_max = 450;
 const paddle_Y_min = 0;
 const paddle_Y_steps = 10;
+let keys;
 
-window.addEventListener('keydown', (e) => {
-    let code = e.code;
-    if (code === "KeyA" && paddleP1_Y !== paddle_Y_min) {
+document.addEventListener("keydown", function(e) {
+    keys = (keys || []);
+    keys[e.keyCode] = true;
+    //KeyA
+    if (keys[65] && paddleP1_Y !== paddle_Y_min) {
         paddleP1_Y -= paddle_Y_steps;
-    } else if (code === "KeyZ" && paddleP1_Y !== paddle_Y_max) {
+    }
+    //KeyZ
+    if (keys[90] && paddleP1_Y !== paddle_Y_max) {
         paddleP1_Y += paddle_Y_steps;
-    } else if (code === "KeyK" && paddleP2_Y !== paddle_Y_min) {
+    }
+    //KeyK
+    if (keys[75] && paddleP2_Y !== paddle_Y_min) {
         paddleP2_Y -= paddle_Y_steps;
-    } else if (code === "KeyM" && paddleP2_Y !== paddle_Y_max) {
+    }
+    //KeyM
+    if (keys[77] && paddleP2_Y !== paddle_Y_max) {
         paddleP2_Y += paddle_Y_steps;
     }
-});
+}, false);
+
+document.addEventListener("keyup", function(e) {
+    keys[e.keyCode] = false;
+    stop();
+}, false);
