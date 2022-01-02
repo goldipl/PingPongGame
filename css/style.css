@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Titillium Web', sans-serif;
-    margin: 40px;
+    margin: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
 .result {
     display: flex;
     flex-direction: row;
-    margin-bottom: 24px;
+    margin: 16px 0;
 }
 
 .result h2:nth-child(2) {
