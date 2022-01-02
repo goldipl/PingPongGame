@@ -9,9 +9,9 @@ const canvasWidth = pingPongCanvas.width;
 const paddleWidth = 30;
 const paddleHeight = 100;
 const paddleP1_X = 10;
-const paddleP1_Y = 300;
+let paddleP1_Y = 300;
 const paddleP2_X = 860;
-const paddleP2_Y = 100;
+let paddleP2_Y = 100;
 const paddleStart_Y = (canvasHeight - paddleHeight) / 2;
 const ball_R = 10;
 const ballStart_X = canvasWidth / 2;
@@ -61,14 +61,27 @@ drawActualState = () => {
 updateState = () => {
     ball_X += ballPosition_X;
     ball_Y += ballPosition_Y;
-
-    paddleP1_Y++;
-    paddleP2_Y++;
-    P1points++;
-    P2points += 3;
 }
 
 setInterval(updateStateAndDrawState = () => {
     updateState();
     drawActualState();
 }, changeState);
+
+drawPoints = () => {
+
+}
+
+//Paddle moving
+window.addEventListener('keydown', (e) => {
+    let code = e.code;
+    if (code === "KeyA" && paddleP1_Y !== 0) {
+        paddleP1_Y -= 10;
+    } else if (code === "KeyZ" && paddleP1_Y !== 450) {
+        paddleP1_Y += 10;
+    } else if (code === "KeyK" && paddleP2_Y !== 0) {
+        paddleP2_Y -= 10;
+    } else if (code === "KeyM" && paddleP2_Y !== 450) {
+        paddleP2_Y += 10;
+    }
+});
