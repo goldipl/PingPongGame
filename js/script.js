@@ -73,15 +73,19 @@ drawPoints = () => {
 }
 
 //Paddle moving
+const paddle_Y_max = 450;
+const paddle_Y_min = 0;
+const paddle_Y_steps = 10;
+
 window.addEventListener('keydown', (e) => {
     let code = e.code;
-    if (code === "KeyA" && paddleP1_Y !== 0) {
-        paddleP1_Y -= 10;
-    } else if (code === "KeyZ" && paddleP1_Y !== 450) {
-        paddleP1_Y += 10;
-    } else if (code === "KeyK" && paddleP2_Y !== 0) {
-        paddleP2_Y -= 10;
-    } else if (code === "KeyM" && paddleP2_Y !== 450) {
-        paddleP2_Y += 10;
+    if (code === "KeyA" && paddleP1_Y !== paddle_Y_min) {
+        paddleP1_Y -= paddle_Y_steps;
+    } else if (code === "KeyZ" && paddleP1_Y !== paddle_Y_max) {
+        paddleP1_Y += paddle_Y_steps;
+    } else if (code === "KeyK" && paddleP2_Y !== paddle_Y_min) {
+        paddleP2_Y -= paddle_Y_steps;
+    } else if (code === "KeyM" && paddleP2_Y !== paddle_Y_max) {
+        paddleP2_Y += paddle_Y_steps;
     }
 });
