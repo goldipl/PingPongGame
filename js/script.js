@@ -43,8 +43,6 @@ drawBall = (ballStart_X, ballStart_Y, ball_R) => {
     ctx.fill();
 }
 
-drawBall(ballStart_X, ballStart_Y, ball_R);
-
 clearCanvas = () => {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
 }
@@ -53,7 +51,7 @@ drawActualState = () => {
     clearCanvas();
     drawPoints(P1points.toString(), p1points);
     drawPoints(P2points.toString(), p2points);
-    drawBall(ball_X, ball_Y);
+    drawBall(ballStart_X, ballStart_Y, ball_R);
     drawPaddle(paddleP1_X, paddleP1_Y);
     drawPaddle(paddleP2_X, paddleP2_Y);
 }
