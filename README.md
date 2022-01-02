@@ -22,3 +22,4 @@ https://goldipl.github.io/PingPongGame/
 
 ## Source
 Source code ©[MarcinMoskala](https://github.com/MarcinMoskala) from book "Javascript od podstaw"
+Code upgraded by me :)
