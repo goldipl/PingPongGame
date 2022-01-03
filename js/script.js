@@ -57,8 +57,8 @@ ballOutsideLeft = () => ball_X + ball_R <= 0;
 ballOutsideRight = () => ball_X - ball_R >= canvasWidth;
 ballBounceFromBottom = () => ball_Y + ball_R >= canvasHeight;
 ballBounceFromTop = () => ball_Y - ball_R <= 0;
-// ballBounceFromPaddleP1 = () => // TO DO;
-// ballBounceFromPaddleP2 = () => // TO DO;
+
+ballisBetween = (value, min, max) => value >= min && value <= max;
 
 updateState = () => {
     ball_X += ballPosition_X;
@@ -72,16 +72,21 @@ updateState = () => {
         p1points.innerText++;
     }
     if (ballBounceFromBottom()) {
+        console.log("Bounce from Bottom");
         ballPosition_X = -ballPosition_X + 5;
         ballPosition_Y = -ballPosition_Y;
     }
     if (ballBounceFromTop()) {
+        console.log("Bounce from Top");
         ballPosition_X = -ballPosition_X + 5;
         ballPosition_Y = -ballPosition_Y;
     }
-    // if (ballBounceFromPaddleP1() || ballBounceFromPaddleP2()) {
-    //     // TO DO
-    // }
+    if (ballisBetween(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && ball_X == paddleP2_X) {
+        console.log("Bounce from Right Paddle");
+    }
+    if (ballisBetween(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && ball_X == paddleP1_X) {
+        console.log("Bounce from Left Paddle");
+    }
 }
 
 moveBalltoStartPosition = () => {
