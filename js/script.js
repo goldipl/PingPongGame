@@ -47,7 +47,7 @@ clearCanvas = () => {
 
 drawActualState = () => {
     clearCanvas();
-    drawBall(ballStart_X, ballStart_Y, ball_R);
+    drawBall(ball_X, ball_Y, ball_R);
     drawPaddle(paddleP1_X, paddleP1_Y);
     drawPaddle(paddleP2_X, paddleP2_Y);
 }
