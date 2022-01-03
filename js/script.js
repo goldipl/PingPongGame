@@ -79,11 +79,11 @@ updateState = () => {
         console.log("Bounce from Top");
         ballPosition_Y = -ballPosition_Y;
     }
-    if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X)) {
+    if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X - paddleP1_X)) {
         console.log("Bounce from Right Paddle");
         ballPosition_X = -ballPosition_X;
     }
-    if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth)) {
+    if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth + paddleP1_X)) {
         console.log("Bounce from Left Paddle");
         ballPosition_X = -ballPosition_X;
     }
