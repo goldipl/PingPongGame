@@ -22,8 +22,8 @@ const changeState = 20;
 
 let ball_X = ballStart_X;
 let ball_Y = ballStart_Y;
-let ballPosition_X = ballSpeedStart_X;
-let ballPosition_Y = ballSpeedStart_Y;
+let ballDirection_X = ballSpeedStart_X;
+let ballDirection_Y = ballSpeedStart_Y;
 
 drawPaddle = (x, y) => {
     ctx.fillStyle = "#FF0000";
@@ -61,8 +61,8 @@ ballBounceFromTop = () => ball_Y - ball_R <= 0;
 ballisBetweenPaddle = (value, min, max) => value >= min && value <= max;
 
 updateState = () => {
-    ball_X += ballPosition_X;
-    ball_Y += ballPosition_Y;
+    ball_X += ballDirection_X;
+    ball_Y += ballDirection_Y;
 
     if (ballOutsideLeft()) {
         moveBalltoStartPosition();
@@ -73,19 +73,19 @@ updateState = () => {
     }
     if (ballBounceFromBottom()) {
         console.log("Bounce from Bottom");
-        ballPosition_Y = -ballPosition_Y;
+        ballDirection_Y = -ballDirection_Y;
     }
     if (ballBounceFromTop()) {
         console.log("Bounce from Top");
-        ballPosition_Y = -ballPosition_Y;
+        ballDirection_Y = -ballDirection_Y;
     }
     if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X - paddleP1_X)) {
         console.log("Bounce from Right Paddle");
-        ballPosition_X = -ballPosition_X;
+        ballDirection_X = -ballDirection_X;
     }
     if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth + paddleP1_X)) {
         console.log("Bounce from Left Paddle");
-        ballPosition_X = -ballPosition_X;
+        ballDirection_X = -ballDirection_X;
     }
 }
 
