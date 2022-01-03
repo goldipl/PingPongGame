@@ -16,7 +16,7 @@ const paddleStart_Y = (canvasHeight - paddleHeight) / 2;
 const ball_R = 10;
 const ballStart_X = canvasWidth / 2;
 const ballStart_Y = canvasHeight / 2;
-const ballSpeedStart_X = 3;
+const ballSpeedStart_X = 2;
 const ballSpeedStart_Y = 2;
 const changeState = 20;
 
@@ -73,19 +73,19 @@ updateState = () => {
     }
     if (ballBounceFromBottom()) {
         console.log("Bounce from Bottom");
-        ballPosition_X = -ballPosition_X + 5;
         ballPosition_Y = -ballPosition_Y;
     }
     if (ballBounceFromTop()) {
         console.log("Bounce from Top");
-        ballPosition_X = -ballPosition_X + 5;
         ballPosition_Y = -ballPosition_Y;
     }
-    if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && ball_X == paddleP2_X) {
+    if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X)) {
         console.log("Bounce from Right Paddle");
+        ballPosition_X = -ballPosition_X;
     }
-    if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && ball_X == paddleP1_X) {
+    if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth)) {
         console.log("Bounce from Left Paddle");
+        ballPosition_X = -ballPosition_X;
     }
 }
 
