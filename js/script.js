@@ -61,6 +61,22 @@ updateState = () => {
     ball_Y += ballPosition_Y;
 }
 
+moveBalltoStartPosition = () => {
+    ball_X = ballStart_X;
+    ball_Y = ballStart_Y;
+}
+
+ballOutsideLeft = () => ball_X + ball_R <= 0;
+ballOutsideRight = () => ball_X - ball_R >= canvasWidth;
+
+if (ballOutsideLeft()) {
+    moveBalltoStartPosition();
+    p2points++;
+} else if (ballOutsideRight()) {
+    moveBalltoStartPosition();
+    p1points++;
+}
+
 setInterval(updateStateAndDrawState = () => {
     updateState();
     drawActualState();
