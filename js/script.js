@@ -52,6 +52,14 @@ drawActualState = () => {
     drawPaddle(paddleP2_X, paddleP2_Y);
 }
 
+//Ball moving
+ballOutsideLeft = () => ball_X + ball_R <= 0;
+ballOutsideRight = () => ball_X - ball_R >= canvasWidth;
+ballBounceFromBottom = () => ball_Y + ball_R >= canvasHeight;
+ballBounceFromTop = () => ball_Y - ball_R <= 0;
+// ballBounceFromPaddleP1 = () => // TO DO;
+// ballBounceFromPaddleP2 = () => // TO DO;
+
 updateState = () => {
     ball_X += ballPosition_X;
     ball_Y += ballPosition_Y;
@@ -63,6 +71,17 @@ updateState = () => {
         moveBalltoStartPosition();
         p1points.innerText++;
     }
+    if (ballBounceFromBottom()) {
+        ballPosition_X = -ballPosition_X + 5;
+        ballPosition_Y = -ballPosition_Y;
+    }
+    if (ballBounceFromTop()) {
+        ballPosition_X = -ballPosition_X + 5;
+        ballPosition_Y = -ballPosition_Y;
+    }
+    // if (ballBounceFromPaddleP1() || ballBounceFromPaddleP2()) {
+    //     // TO DO
+    // }
 }
 
 moveBalltoStartPosition = () => {
@@ -70,13 +89,12 @@ moveBalltoStartPosition = () => {
     ball_Y = ballStart_Y;
 }
 
-ballOutsideLeft = () => ball_X + ball_R <= 0;
-ballOutsideRight = () => ball_X - ball_R >= canvasWidth;
-
 setInterval(updateStateAndDrawState = () => {
     updateState();
     drawActualState();
 }, changeState);
+
+
 
 //Paddle moving
 const paddle_Y_max = 450;
