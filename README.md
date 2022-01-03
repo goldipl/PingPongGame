@@ -2,11 +2,11 @@
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Screen](#screen)
-* [Live](#live)
+* [Live](#live-star2)
 * [Source](#source)
 
 ## General info
-Ping Pong Game
+Ping Pong Game. Game developed for two players.
 
 ## Technologies
 Project was created with:
