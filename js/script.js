@@ -24,8 +24,6 @@ let ball_X = ballStart_X;
 let ball_Y = ballStart_Y;
 let ballPosition_X = ballSpeedStart_X;
 let ballPosition_Y = ballSpeedStart_Y;
-let P1points = 0;
-let P2points = 0;
 
 drawPaddle = (x, y) => {
     ctx.fillStyle = "#FF0000";
@@ -49,8 +47,6 @@ clearCanvas = () => {
 
 drawActualState = () => {
     clearCanvas();
-    drawPoints(P1points.toString(), p1points);
-    drawPoints(P2points.toString(), p2points);
     drawBall(ballStart_X, ballStart_Y, ball_R);
     drawPaddle(paddleP1_X, paddleP1_Y);
     drawPaddle(paddleP2_X, paddleP2_Y);
@@ -71,10 +67,10 @@ ballOutsideRight = () => ball_X - ball_R >= canvasWidth;
 
 if (ballOutsideLeft()) {
     moveBalltoStartPosition();
-    p2points++;
+    p2points.innerText++;
 } else if (ballOutsideRight()) {
     moveBalltoStartPosition();
-    p1points++;
+    p1points.innerText++;
 }
 
 setInterval(updateStateAndDrawState = () => {
