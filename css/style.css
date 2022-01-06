@@ -68,3 +68,12 @@ a:hover {
     color: #FFFFFF;
     background-color: #FF0000;
 }
+
+div.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #FF0000;
+    padding: 40px;
+    border-radius: 16px;
+}
