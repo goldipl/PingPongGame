@@ -31,6 +31,10 @@ h1 {
     margin-bottom: 24px;
 }
 
+h2 {
+    margin-bottom: 16px;
+}
+
 #pingPongCanvas {
     width: 900px;
     height: 550px;
@@ -43,4 +47,24 @@ h1 {
     color: #FF0000;
     font-size: 36px;
     margin-left: 8px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 200px;
+    font-size: 24px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 8px 0;
+    margin-top: 24px;
+    transition: 0.6s;
+}
+
+a:hover {
+    color: #FFFFFF;
+    background-color: #FF0000;
 }
