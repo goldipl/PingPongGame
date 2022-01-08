@@ -1,7 +1,9 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Screen](#screen)
+* [Home Page Screenshot](#home-page-screenshot)
+* [How To Play Screenshot](#how-to-play-screenshot)
+* [Game Screenshot](#game-screenshot)
 * [Live](#live-star2)
 * [Source](#source)
 
@@ -14,8 +16,14 @@ Project was created with:
 * CSS3
 * JavaScript
 
-## Screen
-![Screenshot](pingpong.png) 
+## Home Page Screenshot
+![Screenshot](pingpongscreen02.png) 
+
+## [How To Play Screenshot
+![Screenshot](pingpongscreen03.png) 
+
+## Game Screenshot
+![Screenshot](pingpongscreen01.png) 
 
 ## Live :star2:
 https://goldipl.github.io/PingPongGame/
