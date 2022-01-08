@@ -16,8 +16,8 @@ const paddleStart_Y = (canvasHeight - paddleHeight) / 2;
 const ball_R = 10;
 const ballStart_X = canvasWidth / 2;
 const ballStart_Y = canvasHeight / 2;
-const ballSpeedStart_X = 2;
-const ballSpeedStart_Y = 2;
+const ballSpeedStart_X = 1;
+const ballSpeedStart_Y = 1;
 const changeState = 20;
 
 let ball_X = ballStart_X;
@@ -60,17 +60,24 @@ ballBounceFromTop = () => ball_Y - ball_R <= 0;
 
 ballisBetweenPaddle = (value, min, max) => value >= min && value <= max;
 
-updateState = () => {
+updateResult = () => {
     ball_X += ballDirection_X;
     ball_Y += ballDirection_Y;
 
     if (ballOutsideLeft()) {
         moveBalltoStartPosition();
         p2points.innerText++;
+        ballDirection_X = 1;
+        ballDirection_Y = 1;
     } else if (ballOutsideRight()) {
         moveBalltoStartPosition();
         p1points.innerText++;
+        ballDirection_X = 1;
+        ballDirection_Y = 1;
     }
+}
+
+updateMove = () => {
     if (ballBounceFromBottom()) {
         console.log("Bounce from Bottom");
         ballDirection_Y = -ballDirection_Y;
@@ -82,20 +89,22 @@ updateState = () => {
     if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X - paddleP1_X)) {
         console.log("Bounce from Right Paddle");
         ballDirection_X = -ballDirection_X;
+        ballDirection_X = 2 * ballDirection_X;
+        ballDirection_Y = 2 * ballDirection_Y;
     }
     if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth + paddleP1_X)) {
         console.log("Bounce from Left Paddle");
         ballDirection_X = -ballDirection_X;
     }
 }
-
 moveBalltoStartPosition = () => {
     ball_X = ballStart_X;
     ball_Y = ballStart_Y;
 }
 
 setInterval(updateStateAndDrawState = () => {
-    updateState();
+    updateResult();
+    updateMove();
     drawActualState();
 }, changeState);
 
