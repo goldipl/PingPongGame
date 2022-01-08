@@ -19,7 +19,7 @@ Project was created with:
 ## Home Page Screenshot
 ![Screenshot](pingpongscreen02.png) 
 
-## [How To Play Screenshot
+## How To Play Screenshot
 ![Screenshot](pingpongscreen03.png) 
 
 ## Game Screenshot
