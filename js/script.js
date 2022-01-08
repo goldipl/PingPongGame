@@ -99,8 +99,6 @@ setInterval(updateStateAndDrawState = () => {
     drawActualState();
 }, changeState);
 
-
-
 //Paddle moving
 const paddle_Y_max = 450;
 const paddle_Y_min = 0;
