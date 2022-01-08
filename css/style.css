@@ -36,6 +36,10 @@ h2 {
     margin-bottom: 16px;
 }
 
+h3 {
+    text-align: center;
+}
+
 #pingPongCanvas {
     width: 900px;
     height: 550px;
@@ -77,4 +81,8 @@ div.container {
     border: 2px solid #FF0000;
     padding: 40px;
     border-radius: 16px;
+}
+
+a.playButton {
+    cursor: pointer;
 }
