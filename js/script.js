@@ -61,9 +61,6 @@ ballBounceFromTop = () => ball_Y - ball_R <= 0;
 ballisBetweenPaddle = (value, min, max) => value >= min && value <= max;
 
 updateResult = () => {
-    ball_X += ballDirection_X;
-    ball_Y += ballDirection_Y;
-
     if (ballOutsideLeft()) {
         moveBalltoStartPosition();
         p2points.innerText++;
@@ -95,14 +92,23 @@ updateMove = () => {
     if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth + paddleP1_X)) {
         console.log("Bounce from Left Paddle");
         ballDirection_X = -ballDirection_X;
+        ballDirection_X = 2 * ballDirection_X;
+        ballDirection_Y = 2 * ballDirection_Y;
     }
 }
+
+ballMove = () => {
+    ball_X += ballDirection_X;
+    ball_Y += ballDirection_Y;
+}
+
 moveBalltoStartPosition = () => {
     ball_X = ballStart_X;
     ball_Y = ballStart_Y;
 }
 
 setInterval(updateStateAndDrawState = () => {
+    ballMove();
     updateResult();
     updateMove();
     drawActualState();
