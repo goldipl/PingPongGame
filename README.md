@@ -4,6 +4,7 @@
 * [Home Page Screenshot](#home-page-screenshot)
 * [How To Play Screenshot](#how-to-play-screenshot)
 * [Game Screenshot](#game-screenshot)
+* [Error Page Screenshot](#error-page-screenshot)
 * [Live](#live-star2)
 * [Source](#source)
 
@@ -24,6 +25,10 @@ Project was created with:
 
 ## Game Screenshot
 ![Screenshot](pingpongscreen01.png) 
+
+## Error Page Screenshot
+Error Page when you wanna play game using mobile device.
+![Screenshot](pingpongscreen04.png) 
 
 ## Live :star2:
 https://goldipl.github.io/PingPongGame/
