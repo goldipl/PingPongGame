@@ -130,14 +130,3 @@ document.addEventListener("keyup", function(e) {
     keys[e.keyCode] = false;
     stop();
 }, false);
-
-//check if it's mobile or desktop device
-check = () => {
-    if ((window.innerWidth <= 800) && (window.innerHeight <= 800)) {
-        window.location.href = "./error.html";
-        console.log("mobile");
-    } else {
-        window.location.href = "./game.html";
-        console.log("desktop");
-    }
-}
