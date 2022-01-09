@@ -74,6 +74,11 @@ updateResult = () => {
     }
 }
 
+doubleBallSpeed = () => {
+    ballDirection_X = 2 * ballDirection_X;
+    ballDirection_Y = 2 * ballDirection_Y;
+}
+
 updateMove = () => {
     if (ballBounceFromBottom()) {
         console.log("Bounce from Bottom");
@@ -86,14 +91,12 @@ updateMove = () => {
     if (ballisBetweenPaddle(ball_Y, paddleP2_Y, paddleP2_Y + paddleHeight) && (ball_X == paddleP2_X - paddleP1_X)) {
         console.log("Bounce from Right Paddle");
         ballDirection_X = -ballDirection_X;
-        ballDirection_X = 2 * ballDirection_X;
-        ballDirection_Y = 2 * ballDirection_Y;
+        doubleBallSpeed();
     }
     if (ballisBetweenPaddle(ball_Y, paddleP1_Y, paddleP1_Y + paddleHeight) && (ball_X == paddleP1_X + paddleWidth + paddleP1_X)) {
         console.log("Bounce from Left Paddle");
         ballDirection_X = -ballDirection_X;
-        ballDirection_X = 2 * ballDirection_X;
-        ballDirection_Y = 2 * ballDirection_Y;
+        doubleBallSpeed();
     }
 }
 
