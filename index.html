@@ -19,9 +19,11 @@
         <a href="https://github.com/goldipl">GitHub</a>
     </div>
     <script>
-        //check if it's mobile or desktop device
+    //It's checking if the device is mobile or desktop. 
+    //If it's mobile, it will redirect to error.html.
+    //If it's desktop, it will redirect to game.html.
         check = () => {
-            if ((window.innerWidth <= 800) && (window.innerHeight <= 860)) {
+            if ((window.innerWidth <= 800) && (window.innerHeight <= 960)) {
                 window.location.href = "./error.html";
                 console.log("mobile");
             } else {
